@@ -39,7 +39,7 @@ options(digits=5)
 ```{r message=FALSE, warning=FALSE,results=FALSE}
 predict_EQ5D=function(data,score,method=NULL,filename=NULL){
   n=nrow(data)
-  data$EQ5D_1=ifelse(data$EQ5D==1,1,0)
+  #data$EQ5D_1=ifelse(data$EQ5D==1,1,0)
   data$Diagnosis=factor(ordered(data$Diagnosis,levels=c(1,2,3,4,5)),order=FALSE)
   levels(data$Diagnosis)=c("Carpal Tunnel Syndrome","Thumb Arthritis","Distal Radius Fracture","Hand Tendon Injury","Trigger Finger")
   data$Diagnosis=relevel(factor(data$Diagnosis,order=FALSE),ref="Trigger Finger")
